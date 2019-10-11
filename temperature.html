@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi nhiệt độ</title>
+</head>
+<body>
+    <h1>Chuyển đổi nhiệt độ từ độ C sang F và Kenvin</h1>
+    <input type="text" value="" id="temp">
+    <button type="button" onclick="tem()">Chuyển đổi</button>
+    <div id="result"></div>
+    <script>
+        function tem() {
+            let c = Number(document.getElementById("temp").value);
+            function changeTem(c) {
+                this.tempC = c;
+                this.change = function () {
+                    var f = this.tempC*1.8+32;
+                    var kenvin = this.tempC+273.15;
+                    document.getElementById("result").innerHTML="Độ F là : "+f+"<br>"+"Độ K là : "+kenvin;
+                }
+            }
+            var result = new changeTem(c);
+            result.change();
+        }
+    </script>
+</body>
+</html>
